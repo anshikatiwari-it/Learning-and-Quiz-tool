@@ -1,0 +1,142 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn | Learning & Quiz Tool</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<header>
+
+    <h1>📚 Learning & Quiz Tool</h1>
+
+    <nav>
+        <a href="/">Home</a>
+        <a href="/learn">Learn</a>
+        <a href="/quiz">Quiz</a>
+        <a href="/logout">Logout</a>
+    </nav>
+
+</header>
+
+<main class="learn-container">
+
+    <h2>Learning Notes</h2>
+
+    <p>
+        Read the following notes carefully before starting the quiz.
+    </p>
+
+    <!-- HTML -->
+
+    <section class="topic-card">
+
+        <h3>HTML</h3>
+
+        <p>
+            HTML (HyperText Markup Language) is used to create the structure
+            of web pages. It contains elements such as headings, paragraphs,
+            images, links, tables, and forms.
+        </p>
+
+    </section>
+
+    <!-- CSS -->
+
+    <section class="topic-card">
+
+        <h3>CSS</h3>
+
+        <p>
+            CSS (Cascading Style Sheets) is used to style web pages.
+            It controls colors, fonts, spacing, layouts, animations,
+            and responsive design.
+        </p>
+
+    </section>
+
+    <!-- JavaScript -->
+
+    <section class="topic-card">
+
+        <h3>JavaScript</h3>
+
+        <p>
+            JavaScript adds interactivity to websites.
+            It can validate forms, create animations,
+            handle events, and communicate with servers.
+        </p>
+
+    </section>
+
+    <!-- Python -->
+
+    <section class="topic-card">
+
+        <h3>Python</h3>
+
+        <p>
+            Python is a simple and powerful programming language.
+            It is widely used in web development, artificial intelligence,
+            machine learning, automation, and data science.
+        </p>
+
+    </section>
+
+    <!-- Flask -->
+
+    <section class="topic-card">
+
+        <h3>Flask</h3>
+
+        <p>
+            Flask is a lightweight Python web framework.
+            It helps developers build websites and web applications
+            using Python.
+        </p>
+
+    </section>
+
+    <!-- SQLite -->
+
+    <section class="topic-card">
+
+        <h3>SQLite</h3>
+
+        <p>
+            SQLite is a lightweight database.
+            It stores user information, quiz scores,
+            and application data without requiring a separate server.
+        </p>
+
+    </section>
+
+    <div class="button-area">
+
+        <a href="/quiz">
+            <button class="start-btn">
+                Start Quiz
+            </button>
+        </a>
+
+    </div>
+
+</main>
+
+<footer>
+
+    <p>
+        © 2026 Learning & Quiz Tool | Developed with Flask
+    </p>
+
+</footer>
+
+</body>
+</html>
+```
+
