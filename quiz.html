@@ -1,0 +1,123 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz | Learning & Quiz Tool</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<header>
+    <h1>📝 Learning & Quiz Tool</h1>
+
+    <nav>
+        <a href="/">Home</a>
+        <a href="/learn">Learn</a>
+        <a href="/logout">Logout</a>
+    </nav>
+</header>
+
+<div class="quiz-container">
+
+    <h2>General Knowledge Quiz</h2>
+
+    <p>Answer all the questions and click Submit Quiz.</p>
+
+    <!-- Timer -->
+    <div class="timer">
+        <h3>Time Left: <span id="time">60</span> sec</h3>
+    </div>
+
+    <form action="/result" method="POST">
+
+        {% for q in questions %}
+
+        <div class="question-box">
+
+            <h3>
+                Q{{ loop.index }}. {{ q.question }}
+            </h3>
+
+            <label>
+                <input type="radio"
+                       name="q{{ loop.index }}"
+                       value="{{ q.options[0] }}"
+                       required>
+                {{ q.options[0] }}
+            </label>
+
+            <br>
+
+            <label>
+                <input type="radio"
+                       name="q{{ loop.index }}"
+                       value="{{ q.options[1] }}">
+                {{ q.options[1] }}
+            </label>
+
+            <br>
+
+            <label>
+                <input type="radio"
+                       name="q{{ loop.index }}"
+                       value="{{ q.options[2] }}">
+                {{ q.options[2] }}
+            </label>
+
+            <br>
+
+            <label>
+                <input type="radio"
+                       name="q{{ loop.index }}"
+                       value="{{ q.options[3] }}">
+                {{ q.options[3] }}
+            </label>
+
+        </div>
+
+        <hr>
+
+        {% endfor %}
+
+        <button type="submit" class="submit-btn">
+            Submit Quiz
+        </button>
+
+    </form>
+
+</div>
+
+<footer>
+    <p>© 2026 Learning & Quiz Tool</p>
+</footer>
+
+<script>
+
+let timeLeft = 60;
+
+let timer = setInterval(function(){
+
+    document.getElementById("time").innerHTML = timeLeft;
+
+    timeLeft--;
+
+    if(timeLeft < 0){
+
+        clearInterval(timer);
+
+        alert("Time is over! Quiz will be submitted.");
+
+        document.forms[0].submit();
+
+    }
+
+},1000);
+
+</script>
+
+</body>
+</html>
+```

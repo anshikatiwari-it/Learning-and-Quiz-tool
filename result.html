@@ -1,0 +1,88 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Result | Learning & Quiz Tool</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<header>
+
+    <h1>🎉 Quiz Result</h1>
+
+</header>
+
+<div class="result-container">
+
+    <div class="result-card">
+
+        <h2>Congratulations!</h2>
+
+        <p>You have completed the quiz successfully.</p>
+
+        <hr>
+
+        <h3>Your Score</h3>
+
+        <h1>{{ score }} / {{ total }}</h1>
+
+        <h3>Percentage</h3>
+
+        <h2>{{ percentage }}%</h2>
+
+        <hr>
+
+        {% if percentage >= 50 %}
+
+            <h2 style="color:green;">
+                ✅ Congratulations! You Passed.
+            </h2>
+
+        {% else %}
+
+            <h2 style="color:red;">
+                ❌ Better Luck Next Time.
+            </h2>
+
+        {% endif %}
+
+        <br>
+
+        <a href="/quiz">
+            <button class="retry-btn">
+                Retake Quiz
+            </button>
+        </a>
+
+        <a href="/learn">
+            <button class="learn-btn">
+                Study Again
+            </button>
+        </a>
+
+        <a href="/">
+            <button class="home-btn">
+                Home
+            </button>
+        </a>
+
+    </div>
+
+</div>
+
+<footer>
+
+    <p>
+        © 2026 Learning & Quiz Tool | Flask Project
+    </p>
+
+</footer>
+
+</body>
+</html>
+```
+
